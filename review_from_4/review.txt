@@ -1,0 +1,5 @@
+Awesome report! There is a complete explanation on optimization tests and results. It’s great that you tested so many compiler flags and annotations (although performance wasn’t too different). We only tested -O0 to -O3, but we found some interesting performance bumps using -O1 on blocking (perhaps just a fluke?). It might not hurt to expand -fast and test out -O1 and -O2 on the different optimization methods.
+
+It’s also great that you played around with the extended instruction sets. More investigation into that (perhaps AVX <immintrin.h>?) is warranted for stage 2. This is an area we would like to investigate as well.
+
+Copy optimization results coincided with our group’s, except we seemed to get performance closer to OpenBLAS (without module load openblas). This might be related to the loop ordering conflict mentioned. We used jki in the internal multiplication loop, and left the outer loop as ijk. Our implementation also copied in 0-padded blocks. These might be things to try to further improve the copy optimization.
