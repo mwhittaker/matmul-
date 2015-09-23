@@ -1,0 +1,13 @@
+--What we think they did well--
+->You’ll have presented the report very well with clear examples and proofs of your approach through plots.
+->Loop Ordering: The experiments in different loop orderings clearly states the j,k,i ordering as fastest since both matrices A and B are in column major form.
+-> Copy Optimization: During the copy optimization, copying A into the buffer in row major form and using the usual i,j,k ordering, enables you’ll to make the matmul a series of dot products which can be vectorized. So, I would say well done on this part.
+->Vector Instructions: Well done on experimenting with xmmintrin.h and getting it to work. I too guess that just writing code which promotes vectorized access would be enough for the intel compiler to figure it out.
+->Composing Optimizations: I agree that the copy optimization is the most important one cause the roofline model might suggest that naive matmul is more memory bound rather than compute bound.
+
+--What we think they could improve on--
+->You seem to have thoroughly studied the compiler flags. We too haven’t been able to utilize the flags to the fullest yet, and I guess the Roofline model could be a better frame of reference to whether these flags could actually help us gain noticeable performance boosts.
+->Also, you could experiment with Multi-Level Blocking to exploit cache hierarchy and see how different orderings on different levels of blocking affect the overall speed.
+
+--Anything Else--
+None
