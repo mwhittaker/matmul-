@@ -1,0 +1,22 @@
+What was done well:
+Organization and formatting were great. Analysis of different optimization
+methods seemed to have been done in an organized and well-thought-out manner.
+I liked the detailed explanations of different compiler flags. It looks like
+a lot of thought has been put into the different optimizations that have
+been tried and have yet to be tried. I like the idea of zero-padding to
+mitigate the fact that parts of matrices may not fit into blocks.
+Overall, seems like a very thorough and clear report.
+
+What could be improved on:
+There were no problems per se with the report. However, as mentioned, you 
+should probably experiment more with block size, as our group found that it
+can have a non-negligible effect on the speed. Also, keep look into ways to 
+combine multiple different optimizations, for it is likely that there is
+at least some combination of optimizations that could yield better
+speedup than an algorithm using just one of those optimizations.
+
+Other:
+It seems like you guys are on the right track. Follow through with the
+steps you have discussed in "Future Work" and continue documenting all of
+your results in detail, and you should be well on your way to success in
+this assignment.
